@@ -15,6 +15,7 @@ class Search extends Component {
         this.state = { 
             query : '',
             data: [],
+            queryflag : false,
             filtereddata : []
         }
     }
@@ -35,26 +36,28 @@ class Search extends Component {
         });
         this.setState({
             query:value,
+            queryflag : true,
             filtereddata: queryResult
         })
     }
   
 
     render() {
-        const {data,filtereddata} = this.state;
+        const {data,filtereddata,queryflag} = this.state;
         const Reggae = []
         let example = {Reggae : filtereddata}
         return (
             <div className="container background-img">
-                <h1>Hello World!</h1>
-                <div className="row">
-                    <div className="col-sm-6">
+               
+                <div className="row body-class">
+                    <h1>Hello World!</h1>
+                    <div className="col-lg-12">
                         <p>React Search!<br/>Here is a list of Reggae artists rendered from a JSON object</p>
                         <h1>Search</h1>
-                        <input placeholder="Search the list with React" onChange={(e) => this.onInputChange( e.target.value) }></input>
+                        <input placeholder="Search the list with React" className="input-box" onChange={(e) => this.onInputChange( e.target.value) }></input>
                     </div>
                 </div>
-                {_.size(example.Reggae) != 0 ? <Listdata data={example}/> : <Listdata data={data}/> }
+                {queryflag == true ? <Listdata data={example}/> : <Listdata data={data}/> }
             </div>
         );
     }

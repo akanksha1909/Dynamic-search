@@ -26,11 +26,13 @@ class Listdata extends Component {
     render() {
         const {details} = this.state;
         return (
-            <ul>
-                {details != undefined && _.size(details.Reggae) > 0 && _.map(details.Reggae,function(listValue,index){
-                    return <li key = {index+1}>{listValue}</li>;
-                })}
-            </ul>
+            <div className="body-class">
+                <ul>
+                    {details != undefined && _.size(details.Reggae) > 0 && _.map(details.Reggae,function(listValue,index){
+                        return <li  key = {index+1}>{listValue}</li>;
+                    })}
+                </ul>
+            </div>
         );
     }
 }

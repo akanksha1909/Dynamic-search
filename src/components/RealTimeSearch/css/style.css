@@ -1,10 +1,21 @@
 .background-img{
     background-color: lightblue;
+    height:100%;
+    width:100%;
+    min-height:10500px;
 }
-.row1{
+.body-class{
     margin-top: 10px;
     margin-bottom: 30px;
     margin-left: 350px;
     height: 200px;
     width: 45%;
+    text-align: center;
+
+}
+.input-box {
+    width :50%
+}
+ul{
+    list-style-type: none;
 }
